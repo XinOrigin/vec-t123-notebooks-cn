@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vec-t123-notebooks-cn"
+version = "0.1.0"
+description = "Executed bilingual (ZH/EN) Jupyter/Colab tutorial notebooks for Virtual Embryo Challenge T1, T2, and T3"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    "anndata>=0.10",
+    "matplotlib>=3.8",
+    "numpy>=1.24",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+veckit = ["veckit @ git+https://github.com/aristoteleo/vec_baselines.git"]
+notebook = ["ipykernel>=6.29", "nbclient>=0.10", "nbformat>=5.10"]
+dev = ["pytest>=7.4", "ipykernel>=6.29", "nbclient>=0.10", "nbformat>=5.10"]
+
+[tool.setuptools]
+py-modules = ["vec_nb_helpers"]
